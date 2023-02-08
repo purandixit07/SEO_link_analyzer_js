@@ -1,0 +1,23 @@
+{
+  "name": "seo_link_analyzer_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purandixit07/SEO_link_analyzer_js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purandixit07/SEO_link_analyzer_js/issues"
+  },
+  "homepage": "https://github.com/purandixit07/SEO_link_analyzer_js#readme",
+  "devDependencies": {
+    "jest": "^29.4.2"
+  }
+}
