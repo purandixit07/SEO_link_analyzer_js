@@ -8,9 +8,23 @@ const getURLsFromHTML = (htmlBody, baseURL) => {
     for (linkElement of linkElements) {
         if (linkElement.href.slice(0,1) === '/') {
             // relative
-            urls.push(`${baseURL}${linkElement.href}`)
-        } else {
-            urls.push(linkElement.href)
+            try {
+                const urlObj = new URL(`${baseURL}${linkElement.href}`)
+                urls.push(urlObj.href)
+            }
+            catch (err){
+                console.log(`error with relative url: ${err.message}`)
+            }
+            
+        } else { 
+            // absolute
+            try {
+                const urlObj = new URL(linkElement.href)
+                urls.push(urlObj.href)
+            }
+            catch (err){
+                console.log(`error with absolute url: ${err.message}`)
+            }
         }
         // console.log(linkElement.href)
     }
@@ -24,14 +38,15 @@ const normalizeURL = (urlString) => {
         return hostPath.slice(0, -1)
     }
     return hostPath
-    }
+}  
 
 
+function main() {
 
+}
 
+main()
 
-
-    
 module.exports = {
     normalizeURL, getURLsFromHTML
 }
